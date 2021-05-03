@@ -1,0 +1,24 @@
+.main-header {
+	text-align: center;
+	padding: 90px 10px 30px;
+
+	&__title {
+		color: $color-very-dark-magenta;
+		font-weight: $font-bold;
+	}
+
+	&__subtitle {
+		color: $color-dark-grayish-magenta;
+		font-weight: $font-regular;
+		line-height: 20pt;
+	}
+}
+
+@include laptop {
+	.main-header {
+		text-align: left;
+		font-size: 1.2rem;
+		font-size: $font-bold;
+		grid-column: 1/2;
+	}
+}

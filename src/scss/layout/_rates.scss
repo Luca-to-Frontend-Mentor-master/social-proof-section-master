@@ -1,0 +1,38 @@
+.rates {
+	text-align: center;
+	margin-bottom: 40px;
+}
+@include laptop {
+	.rates {
+		margin-bottom: 0;
+		margin-top: 100px;
+		grid-column: 3/4;
+	}
+}
+.rated {
+	background-color: $color-light-grayis-magenta;
+	color: $color-very-dark-magenta;
+	font-weight: $font-bold;
+	padding: 10px 25px;
+	margin: 15px 0;
+	border-radius: 5px;
+
+	&__star {
+		padding: 6px;
+	}
+}
+@include laptop {
+	.rated {
+		display: flex;
+		align-items: center;
+		justify-content: start;
+		width: 500px;
+		position: relative;
+	}
+	.rated:first-child {
+		left: -150px;
+	}
+	.rated:nth-child(2) {
+		left: -75px;
+	}
+}

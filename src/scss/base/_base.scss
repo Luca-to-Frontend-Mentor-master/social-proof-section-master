@@ -1,0 +1,53 @@
+* {
+	box-sizing: border-box;
+}
+
+html::before,
+html::after {
+	position: absolute;
+}
+
+html::before {
+	content: url('/src/assets/img-bg/bg-pattern-top-mobile.svg');
+}
+
+@include laptop {
+	html::before {
+		content: url('/src/assets/img-bg/bg-pattern-top-desktop.svg');
+	}
+}
+
+html::after {
+	content: url('/src/assets/img-bg/bg-pattern-bottom-mobile.svg');
+	position: fixed;
+	bottom: -20%;
+	right: 0;
+	z-index: -1;
+}
+
+@include laptop {
+	hhtml::after {
+		content: url('/src/assets/img-bg/bg-pattern-bottom-desktop.svg');
+	}
+}
+
+body {
+	margin: 0;
+	font-size: 15px;
+	font-family: $main-font;
+	padding: 0 25px;
+	max-width: 100vh;
+}
+
+
+@include laptop {
+	body {
+		max-width: 1440px;
+		margin-left: auto;
+		margin-right: auto;
+		display: grid;
+		justify-items: end;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 800px);
+	}
+}
